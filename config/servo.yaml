@@ -1,0 +1,8 @@
+# MoveIt Servo (Jazzy), nur Abweichungen von den Defaults
+move_group_name: ur5e_arm
+command_in_type: speed_units
+command_out_type: std_msgs/Float64MultiArray
+command_out_topic: /forward_position_controller/commands
+publish_joint_velocities: false
+publish_period: 0.004
+is_primary_planning_scene_monitor: false

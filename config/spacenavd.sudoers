@@ -1,0 +1,3 @@
+# Erlaubt dem Teleop-Launch, spacenavd ohne Passwort zu starten/stoppen.
+# Installation siehe README.md
+ALL ALL=(root) NOPASSWD: /usr/bin/systemctl start spacenavd, /usr/bin/systemctl stop spacenavd
