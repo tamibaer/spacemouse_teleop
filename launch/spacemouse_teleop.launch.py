@@ -49,7 +49,7 @@ def generate_launch_description():
         ],
         output='screen',
     )
-    driver = Node(package='spacenav', executable='spacenav_node', output='screen')
+    driver = Node(package='spacenav', executable='spacenav_node', parameters=[{'zero_when_static': False}], output='screen')
     teleop = Node(package='robot_table_spacemouse_teleop', executable='spacemouse_teleop', output='screen')
 
     def on_service_started(event, context):
