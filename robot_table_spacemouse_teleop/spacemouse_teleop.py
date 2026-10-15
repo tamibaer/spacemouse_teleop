@@ -14,7 +14,7 @@ class SpacemouseTeleop(Node):
     def __init__(self):
         super().__init__('spacemouse_teleop')
         self.max_linear = self.declare_parameter('max_linear', 1.0).value    # m/s
-        self.max_angular = self.declare_parameter('max_angular', 1.0).value  # rad/s
+        self.max_angular = self.declare_parameter('max_angular', 2.0).value  # rad/s
         self.frame = self.declare_parameter('frame', 'ur5e_base_link').value
 
         self.twist_pub = self.create_publisher(TwistStamped, 'servo_node/delta_twist_cmds', 10)
