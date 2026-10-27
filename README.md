@@ -1,6 +1,8 @@
 # Robot Table Spacemouse Teleoperation
 
-Spacemouse → MoveIt Servo → `forward_position_controller` (UR5e), linke Taste öffnet/schließt den Robotiq-Greifer.
+Spacemouse 🪐 → **Damped Least Squares (DLS)** → MoveIt Servo (`JointJog`) → `forward_position_controller` (UR5e).
+Die MENU-Taste öffnet/schließt den Robotiq-Greifer.
+
 
 ## Einmalige Einrichtung
 
@@ -14,12 +16,10 @@ sudo visudo -c
 ## Start
 
 ```bash
-# Roboter (oder use_mock_hardware:=true zum Testen)
 ros2 launch robot_table_control start_robot.launch.py use_mock_hardware:=false 
 ```
 
 ```bash
-# Teleop
 ros2 launch robot_table_spacemouse_teleop spacemouse_teleop.launch.py
 ```
 
