@@ -42,6 +42,7 @@ def generate_launch_description():
         name='servo_node',
         parameters=[
             servo_params,
+            {'butterworth_filter_coeff': 4.0},
             moveit_config.robot_description,
             moveit_config.robot_description_semantic,
             moveit_config.robot_description_kinematics,
@@ -63,7 +64,6 @@ def generate_launch_description():
 
     return LaunchDescription([
         start_service,
-        use_servo_controller,
         servo,
         RegisterEventHandler(OnProcessExit(target_action=start_service, on_exit=on_service_started)),
         RegisterEventHandler(OnShutdown(on_shutdown=on_shutdown)),
